@@ -1,0 +1,62 @@
+.navbar{
+    background: linear-gradient(to left, rgb(81, 0, 255), rgb(0, 152, 0));
+    height: 70px;
+    animation: hueRotate 9s linear infinite alternate   ;
+
+    .main-navigation{
+        span{
+            padding-inline: 10px;
+            padding-block: 5px;
+            border: 2px solid black;
+            border-radius: 20px;
+            margin-right: 5px;
+            transition: 0.5s background-color;
+            cursor: default;
+        }
+        span:first-child{
+            margin-left: 30px;
+        }
+        span:hover{
+            background-color: rgb(250, 234, 154);
+        }
+    }
+    .account-navigation{
+        span{
+            padding-inline: 10px;
+            padding-block: 5px;
+            border: 2px solid black;
+            border-radius: 20px;
+            margin-right: 30px;
+            transition: 0.5s background-color;
+            cursor: default;
+        }
+        span:hover{
+            background-color: rgb(250, 234, 154);
+        }
+    }
+}
+
+@media (max-width: 640px){
+    .navbar{
+        .main-navigation{
+            span:first-child{
+                margin-left: 5px;
+            }
+        }
+        .account-navigation{
+            span{
+                margin-right: 5px;
+                transition: 0s;
+            }
+        }
+    }
+}
+
+@keyframes hueRotate {
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(180deg);
+    }
+}

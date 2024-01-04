@@ -1,0 +1,35 @@
+.deposit-container{
+    height: 100%;
+    .form-container{
+        transform: translateY(-150px);
+        h1{
+            width: max-content;
+            margin-bottom: 30px;
+        }
+        border: 3px solid black;
+        border-radius: 30px;
+        padding-bottom: 30px;
+        padding-top: 20px;
+    }
+    .deposit-form{
+        width: 300px;
+        .form-control{
+            border: none;
+            border-bottom: 3px solid black;
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+            box-shadow: none;
+            padding-right: 20px;
+            &:focus{
+                background-color: rgba(127, 255, 212, 0.328);
+            }
+        }
+        .input-group-text{
+            border:none;
+            border-right: 3px solid black;
+            border-top: 3px solid black;
+            border-top-left-radius: 50%;
+        }
+    }
+    
+}
