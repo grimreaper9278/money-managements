@@ -16,8 +16,9 @@ create table transaction_type(
 );
 
 create table transactions(
-	id int,
+	id serial primary key,
 	amount int not null,
 	title varchar(255) not null,
-	user_id int REFERENCES users(id)
+	user_id int REFERENCES users(id),
+	type_id int REFERENCES transaction_type(id)
 );

@@ -1,7 +1,6 @@
 // Import modules
 const express = require("express");
 const cors = require("cors");
-const morgan = require("morgan");
 const colors = require("colors");
 const PORT = 5555;
 require("./database/db");
@@ -16,14 +15,13 @@ app.use(express.json());
 
 // Import Routes
 const authRoutes = require("./routes/auth");
+const walletRoutes = require("./routes/wallet");
+const transactionRoutes = require("./routes/transaction");
 
 // Register Routes
 app.use("/api/auth", authRoutes);
-
-// Implement req logger for development mood
-if (process.env.NODE_ENV === "development") {
-  app.use(morgan("dev"));
-}
+app.use("/api/wallet", walletRoutes);
+app.use("/api/transaction", transactionRoutes);
 
 // Start server Configuration
 const server = app.listen(
