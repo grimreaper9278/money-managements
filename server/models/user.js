@@ -2,9 +2,6 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const client = require("../database/db");
 
-const JWT_SECRET = "MoneyManagement";
-const JWT_EXPIRE = "30d";
-
 class UserModel {
   async register(user) {
     const { username, password } = user;
@@ -59,8 +56,8 @@ class UserModel {
   };
 
   genToken = async (id) => {
-    return await jwt.sign({ id }, JWT_SECRET, {
-      expiresIn: JWT_EXPIRE,
+    return await jwt.sign({ id }, process.env.JWT_SECRET, {
+      expiresIn: process.env.JWT_EXPIRE,
     });
   };
 }
